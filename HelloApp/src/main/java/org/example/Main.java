@@ -4,25 +4,23 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
-        StringBuilder names = new StringBuilder();
-
-        // Check if no arguments are provided
+        // If no arguments → default
         if (args.length == 0) {
-            names.append("World");
-        } else {
-
-            for (String name : args) {
-
-                // Add comma only if not first element
-                if (names.length() > 0) {
-                    names.append(", ");
-                }
-
-                names.append(name);
-            }
+            System.out.println("Hello, World!");
+            return;
         }
 
-        // Final output
+        StringBuilder nameBuilder = new StringBuilder();
+
+        // Enhanced for loop
+        for (String name : args) {
+            nameBuilder.append(name).append(", ");
+        }
+
+        // Remove trailing ", "
+        String names = nameBuilder.substring(0, nameBuilder.length() - 2);
+
+        // Print result
         System.out.println("Hello, " + names + "!");
     }
 }
