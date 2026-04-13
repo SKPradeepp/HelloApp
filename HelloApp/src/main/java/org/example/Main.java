@@ -4,13 +4,25 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
-        String greeting;
-        if (args.length > 0) {
-            String names = String.join(", ", args);
-            greeting = "Hello, " + names + "!";
+        StringBuilder names = new StringBuilder();
+
+        // Check if no arguments are provided
+        if (args.length == 0) {
+            names.append("World");
         } else {
-            greeting = "Hello, World!";
+
+            for (String name : args) {
+
+                // Add comma only if not first element
+                if (names.length() > 0) {
+                    names.append(", ");
+                }
+
+                names.append(name);
+            }
         }
-        System.out.println(greeting);
+
+        // Final output
+        System.out.println("Hello, " + names + "!");
     }
 }
