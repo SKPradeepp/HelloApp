@@ -6,25 +6,21 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        6Scanner input = new Scanner(System.in);
 
-        // Prompt user for input
-        System.out.println("Enter age:");
+        // Take user input
+        System.out.println("Enter a number:");
+        int number = input.nextInt();
 
-        // Check if input is a valid integer
-        if (input.hasNextInt()) {
-
-            int age = input.nextInt();
-
-            // Decision making using if-else
-            if (age >= 18) {
-                System.out.println("Person can vote");
-            } else {
-                System.out.println("Person cannot vote");
-            }
-
-        } else {
-            System.out.println("Invalid input. Please enter a valid age.");
+        // Check condition using if-else if-else
+        if (number > 0) {
+            System.out.println("The number is Positive");
+        }
+        else if (number < 0) {
+            System.out.println("The number is Negative");
+        }
+        else {
+            System.out.println("The number is Zero");
         }
 
         // Close scanner
