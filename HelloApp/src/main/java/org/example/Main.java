@@ -1,21 +1,27 @@
 package org.example;
 
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
-        String greeting;
+        Scanner input = new Scanner(System.in);
 
-        // Check if no arguments are provided
-        if (args.length == 0) {
-            greeting = "Hello, World!";
+        System.out.print("Enter a number: ");
+
+        if (input.hasNextInt()) {
+
+            int number = input.nextInt();
+
+            boolean isEven = (number % 2 == 0);
+
+            System.out.println("Is number even? " + isEven);
+
         } else {
-            // Join all names with comma and space
-            String names = String.join(", ", args);
-            greeting = "Hello, " + names + "!";
+            System.out.println("Invalid input. Please enter a number.");
         }
 
-        // Print the greeting
-        System.out.println(greeting);
+        input.close();
     }
 }
